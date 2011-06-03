@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
   <display-name>Lab07</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+  
+	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  	
+  	<context-param>
+    	<param-name>outputPageTitle</param-name>
+    	<param-value>COMP 3641 Lab07 Output Page</param-value>
+  	</context-param>
+
+	<servlet>
+	   	<servlet-name>Lab07</servlet-name>
+	   	<servlet-class>a00222500.lab07.lab07</servlet-class>
+	   	<init-param>
+	   		<param-name>url</param-name>
+	   		<param-value>jdbc:sqlserver://Beangrinder.bcit.ca</param-value>
+	   	</init-param>
+	   	<init-param>
+	   		<param-name>driver</param-name>
+	   		<param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+	   	</init-param>
+	   	<init-param>
+	   		<param-name>dbname</param-name>
+	   		<param-value>jspweb</param-value>
+	   	</init-param>
+	   	<init-param>
+	   		<param-name>username</param-name>
+	   		<param-value>javastudent</param-value>
+	   	</init-param>
+	   	<init-param>
+	   		<param-name>password</param-name>
+	   		<param-value>compjava</param-value>
+	   	</init-param>
+	</servlet>
+
 </web-app>

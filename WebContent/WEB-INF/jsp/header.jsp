@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./styles/lab07styles.css" >
+<title>${initParam.applicationPageTitle}</title>
 </head>
-<body>
 
-</body>
-</html>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<img class="header_image" src="images/beatles_image.jpeg" />
+			<span class="header_text">The Beatles Database</span>
+		</div>
