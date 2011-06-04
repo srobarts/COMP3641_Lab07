@@ -14,7 +14,7 @@
 
 	<servlet>
 	   	<servlet-name>Lab07</servlet-name>
-	   	<servlet-class>a00222500.lab07.lab07</servlet-class>
+	   	<servlet-class>a00222500.lab07.Lab07</servlet-class>
 	   	<init-param>
 	   		<param-name>url</param-name>
 	   		<param-value>jdbc:sqlserver://Beangrinder.bcit.ca</param-value>
@@ -36,5 +36,10 @@
 	   		<param-value>compjava</param-value>
 	   	</init-param>
 	</servlet>
+	
+	<servlet-mapping>
+    	<servlet-name>Lab07</servlet-name>
+    	<url-pattern>/query_database</url-pattern>
+  	</servlet-mapping>
 
 </web-app>

@@ -5,12 +5,14 @@ import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.Vector;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import a00222500.lab07.DatabaseBean;
 
@@ -55,20 +57,20 @@ public class Lab07 extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		
 		String requestedAction = request.getParameter("action");
 		if(requestedAction.equals("query")) {
 			//query is being sent - send to database
 			String queryString = request.getParameter("query");
 			
-			//set the query string
 			db.setQueryString(queryString);
-			//then run the query
 			@SuppressWarnings("rawtypes")
 			Vector tableData = db.runQuery();
-			//get query results back
 			@SuppressWarnings("rawtypes")
 			Iterator rows = tableData.iterator();
 			
@@ -82,20 +84,25 @@ public class Lab07 extends HttpServlet {
 			}
 			@SuppressWarnings("rawtypes")
 			Iterator headers = headerNames.iterator();
-			//now that we have the data - what to do with it?
-			//send 'headers' and 'rows' to output.jsp
 			
+			session.setAttribute("headers", headers);
+			session.setAttribute("rows", rows);
 			
+			//send results to results page
+			String url2 = "/WEB-INF/jsp/output.jsp";
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url2);
+			dispatcher.forward(request, response);	
+			
+			//close database connection
+			//db.cleanUp();	
 			
 		}
-		
-		
 	}
-
+	
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 

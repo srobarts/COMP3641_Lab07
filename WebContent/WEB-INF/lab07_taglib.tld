@@ -9,14 +9,14 @@
 
 	<tag>
     	<description>Displays header information from query returned</description>
-    	<name>HeaderTags</name>
+    	<name>headertags</name>
 		<tag-class>a00222500.lab07.tags.HeaderTags</tag-class>
 		<body-content>JSP</body-content>
   	</tag>
   	
   	<tag>
     	<description>Displays row information from query returned</description>
-    	<name>RowTags</name>
+    	<name>rowtags</name>
 		<tag-class>a00222500.lab07.tags.RowTags</tag-class>
 		<body-content>JSP</body-content>
   	</tag>

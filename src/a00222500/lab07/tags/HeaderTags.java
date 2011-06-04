@@ -1,34 +1,27 @@
 package a00222500.lab07.tags;
 
+import java.io.IOException;
+import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.BodyTagSupport;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class HeaderTags extends BodyTagSupport {
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<LineItem> lineItems;
-	private Iterator iterator;
-	private LineItem item;
+	//get Vector object out of session and parse out
+	
 	
 	public int doStartTag()
-	{
-		Vector headers (String) pageContext.findAttribute("headers");
-		lineItems = headers.getItems();
-		if(lineItems.size() <= 0) {
-			return SKIP_BODY;
-		} else {
-			return EVAL_BODY_BUFFERED;
+	{		
+		String field = "STUFF";
+		try {
+			JspWriter out = pageContext.getOut();
+			out.print("<table>");
+			out.print("<td>" + field + "</td>");
+			out.print("</table>");
+		} catch (IOException ioe) {
+			System.out.println("Error in tag: " + ioe);
 		}
-	}
-	
-	public void doInitBody() throws JspException
-	{
-		iterator = lineItems.iterator();
-		if(iterator.hasNext())
-		{
-			item = (LineItem)iterator.next();
-			this.setItemAttributes(item);
-		}
+		return(EVAL_BODY_INCLUDE);
 	}
 	
 
