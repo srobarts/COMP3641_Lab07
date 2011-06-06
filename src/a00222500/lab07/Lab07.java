@@ -70,8 +70,6 @@ public class Lab07 extends HttpServlet {
 			db.setQueryString(queryString);
 			@SuppressWarnings("rawtypes")
 			Vector tableData = db.runQuery();
-			/*@SuppressWarnings("rawtypes")
-			Iterator rows = tableData.iterator();*/
 			
 			//display headers
 			@SuppressWarnings("rawtypes")
@@ -81,8 +79,6 @@ public class Lab07 extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			/*@SuppressWarnings("rawtypes")
-			Iterator headers = headerNames.iterator();*/
 			
 			session.setAttribute("db", this.db);
 			session.setAttribute("headerNames", headerNames);

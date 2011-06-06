@@ -46,7 +46,7 @@ public class HeaderTags extends BodyTagSupport {
 			out.print("<tr>");
 			while (headers.hasNext()) {
 				String title = (String)headers.next();
-				out.print("<td>" + title + "</td>");
+				out.print("<th>" + title + "</th>");
 			}
 			out.print("</tr>");
 		} catch (IOException ioe) {

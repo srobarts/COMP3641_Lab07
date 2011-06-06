@@ -4,15 +4,16 @@
 <%@ taglib uri="/WEB-INF/lab07_taglib.tld" prefix="lab07" %>
 
 <div id="content">
-	<h1>Query Results</h1>
+	<h1>Query Results:</h1>
 	<br />
-	<p>Query: ${db.queryString}</p>
+	<em>Your Query: ${db.queryString}</em>
+	<br />
+	<h3><a href="./index.jsp">Query Again</a></h3>
 	
 	<div id="tablecontent">
 		<!--  output headers  -->
 		<lab07:headertags headerNames='<%= session.getAttribute("headerNames") %>' backgroundColor="tan"></lab07:headertags>
 		<lab07:rowtags rowData='<%= session.getAttribute("rowData") %>' evenRowColor="tan" oddRowColor="white"></lab07:rowtags>
-		${db.cleanUp()}
 	</div>
 </div>
 
