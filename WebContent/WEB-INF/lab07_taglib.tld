@@ -19,6 +19,10 @@
            		can be a JSP expression. -->
       		<rtexprvalue>true</rtexprvalue>
     	</attribute>
+    	<attribute>
+      		<name>backgroundColor</name>
+      		<required>true</required>
+    	</attribute>
   	</tag>
   	
   	<tag>
@@ -32,6 +36,14 @@
       		<!-- rtexprvalue indicates whether attribute
            		can be a JSP expression. -->
       		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+      		<name>oddRowColor</name>
+      		<required>false</required>
+    	</attribute>
+    	<attribute>
+      		<name>evenRowColor</name>
+      		<required>false</required>
     	</attribute>
   	</tag>
 

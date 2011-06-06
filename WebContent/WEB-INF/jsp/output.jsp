@@ -10,12 +10,10 @@
 	
 	<div id="tablecontent">
 		<!--  output headers  -->
-		<table>
-		<lab07:headertags headerNames='<%= session.getAttribute("headerNames") %>'></lab07:headertags>
-		<lab07:rowtags rowData='<%= session.getAttribute("rowData") %>'></lab07:rowtags>
-		</table>
+		<lab07:headertags headerNames='<%= session.getAttribute("headerNames") %>' backgroundColor="tan"></lab07:headertags>
+		<lab07:rowtags rowData='<%= session.getAttribute("rowData") %>' evenRowColor="tan" oddRowColor="white"></lab07:rowtags>
+		${db.cleanUp()}
 	</div>
-
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include>
