@@ -1,0 +1,24 @@
+/****************************
+
+LAB 07 COMP 3641
+
+By: Scott Robarts
+Student ID: A00222500
+Date: June 6, 2011
+
+/****************************
+
+
+- Entry point for the application is index.jsp
+
+- MVC design pattern is utilized with all communication between Model and View brokered by the Controller
+	Lab07.java
+	
+- DatabaseBean.java is Model and takes care of all database interfacing
+- Database settings are in web.xml (/WEB-INF/web.xml)
+
+- Application uses custom tags which are defined in lab07_taglib.tld (/WEB-INF/lab07_taglib.tld)
+- Two custom tags functionality created in HeaderTags.java and RowTags.java in package a00222500.lab07.tags
+
+- Controller Lab07.java passes control to DatabaseBean to query database then from the Vectors returned by DatabaseBean
+ 	prepares and sends this data to the output page output.jsp, where it is display using custom tags.
