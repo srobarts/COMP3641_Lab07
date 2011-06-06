@@ -17,5 +17,10 @@
 	</div>
 
 </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 88e985a6deb608877ca30a3b8dc4d9bb2806e6cb
 
 <jsp:include page="footer.jsp"></jsp:include>
