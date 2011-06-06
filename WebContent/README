@@ -22,3 +22,7 @@ Date: June 6, 2011
 
 - Controller Lab07.java passes control to DatabaseBean to query database then from the Vectors returned by DatabaseBean
  	prepares and sends this data to the output page output.jsp, where it is display using custom tags.
+ 	
+- Custom tags allow for user to customize table background color and table row colors.  Colors sent to application have to
+	be valid colors understood by CSS for them to work.  Hex codes can be sent if they properly have a # symbol in front
+	of them.
