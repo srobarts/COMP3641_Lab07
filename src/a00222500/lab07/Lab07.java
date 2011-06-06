@@ -2,7 +2,6 @@ package a00222500.lab07;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.Vector;
 
 import javax.servlet.RequestDispatcher;
@@ -71,8 +70,8 @@ public class Lab07 extends HttpServlet {
 			db.setQueryString(queryString);
 			@SuppressWarnings("rawtypes")
 			Vector tableData = db.runQuery();
-			@SuppressWarnings("rawtypes")
-			Iterator rows = tableData.iterator();
+			/*@SuppressWarnings("rawtypes")
+			Iterator rows = tableData.iterator();*/
 			
 			//display headers
 			@SuppressWarnings("rawtypes")
@@ -82,11 +81,12 @@ public class Lab07 extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			@SuppressWarnings("rawtypes")
-			Iterator headers = headerNames.iterator();
+			/*@SuppressWarnings("rawtypes")
+			Iterator headers = headerNames.iterator();*/
 			
-			session.setAttribute("headers", headers);
-			session.setAttribute("rows", rows);
+			session.setAttribute("db", this.db);
+			session.setAttribute("headerNames", headerNames);
+			session.setAttribute("rowData", tableData);
 			
 			//send results to results page
 			String url2 = "/WEB-INF/jsp/output.jsp";

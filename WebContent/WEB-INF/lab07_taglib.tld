@@ -12,6 +12,13 @@
     	<name>headertags</name>
 		<tag-class>a00222500.lab07.tags.HeaderTags</tag-class>
 		<body-content>JSP</body-content>
+		<attribute>
+      		<name>headerNames</name>
+      		<required>true</required>
+      		<!-- rtexprvalue indicates whether attribute
+           		can be a JSP expression. -->
+      		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
   	</tag>
   	
   	<tag>
@@ -19,6 +26,13 @@
     	<name>rowtags</name>
 		<tag-class>a00222500.lab07.tags.RowTags</tag-class>
 		<body-content>JSP</body-content>
+		<attribute>
+      		<name>rowData</name>
+      		<required>true</required>
+      		<!-- rtexprvalue indicates whether attribute
+           		can be a JSP expression. -->
+      		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
   	</tag>
 
 </taglib>
